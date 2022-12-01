@@ -1,0 +1,150 @@
+type Farm @entity {
+  id: ID!
+  token: Bytes! # address
+  marketName: String! # string
+  marketIndex: String!
+  epochId: String!
+  type: String!
+  pair: Bytes!
+  balance: BigInt!
+  active: Boolean
+  duration: Int
+  address: Bytes!
+  vaultAddress: Bytes!
+  strikePrice: BigInt! # uint256
+  formattedStrikePrice: String! # uint256
+  endEpoch: Int!
+  startEpoch: Int!
+}
+
+type FarmPosition @entity {
+  id: ID!
+  farmId: String!
+  user: Bytes!
+  token: Bytes! # address
+  marketName: String! # string
+  marketIndex: String!
+  epochId: String!
+  type: String!
+  pair: Bytes!
+  balance: BigInt!
+  endEpoch: Int!
+  startEpoch: Int!
+  duration: Int
+  strikePrice: BigInt! # uint256
+  formattedStrikePrice: String! # uint256
+}
+
+type EpochIdMapping @entity {
+  id: ID!
+  epochId: String!
+}
+
+type Token @entity {
+  id: ID!
+  name: String!
+  address: Bytes!
+}
+
+type EpochVault @entity {
+  id: ID!
+  user: Bytes!
+  balance: BigInt
+  claimed: Boolean
+  isOngoing: Boolean!
+  isResolved: Boolean!
+  address: Bytes!
+  epochId: String!
+  name: String! # string¨
+  marketIndex: String!
+  tokenAdress: Bytes! # address
+  marketName: String! # string¨
+  strikePrice: BigInt! # uint256
+  formattedStrikePrice: String! # uint256
+  type: String!
+  isFarming: Boolean
+  farmId: String
+  endEpoch: Int! # string
+  startEpoch: Int! # string
+  farmAddress: Bytes
+}
+
+type Vault @entity {
+  id: ID!
+  address: Bytes!
+  name: String! # string¨
+  marketIndex: String!
+  tokenAdress: Bytes! # address
+  marketName: String! # string¨
+  strikePrice: BigInt! # uint256
+  formattedStrikePrice: String! # uint256
+  type: String!
+}
+
+type Market @entity {
+  id: ID!
+  hedgeVault: Bytes! # address
+  riskVault: Bytes! # address
+  strikePrice: BigInt! # uint256
+  formattedStrikePrice: String! # uint256
+  token: Bytes! # address
+  marketName: String! # string
+  marketIndex: String!
+}
+
+type Epoch @entity {
+  id: ID!
+  hedgeVault: Bytes! # address
+  riskVault: Bytes! # address
+  token: Bytes! # address
+  marketName: String! # string
+  strikePrice: BigInt! # uint256
+  formattedStrikePrice: String! # uint256
+  marketIndex: String!
+  startEpoch: Int! # string
+  endEpoch: Int! # string
+  isDeppeged: Boolean!
+  epochEnded: Boolean!
+  withdrawalFee: Int! # int256
+  triggredAt: BigInt # uint256
+  depegPrice: BigInt # int256
+  RISK_claimTVL: BigInt # uint256
+  RISK_finalTVL: BigInt # uint256
+  INSR_claimTVL: BigInt # uint256
+  INSR_finalTVL: BigInt # uint256
+}
+
+# type changeWithdrawalFee @entity {
+#   id: ID!
+#   _marketIndex: BigInt! # uint256
+#   _feeRate: BigInt! # uint256
+# }
+
+# type changedController @entity {
+#   id: ID!
+#   _marketIndex: BigInt! # uint256
+#   controller: Bytes! # address
+# }
+
+# type changedTimeWindow @entity {
+#   id: ID!
+#   _marketIndex: BigInt! # uint256
+#   _timeWindow: BigInt! # uint256
+# }
+
+# type changedTreasury @entity {
+#   id: ID!
+#   _treasury: address! # address
+#   _marketIndex: BigInt! # uint256
+# }
+
+# type changedVaultFee @entity {
+#   id: ID!
+#   _marketIndex: BigInt! # uint256
+#   _feeRate: BigInt! # uint256
+# }
+
+# type controllerSet @entity {
+#   id: ID!
+#   newController: Bytes! # address
+# }

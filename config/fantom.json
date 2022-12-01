@@ -1,0 +1,7 @@
+{
+  "network": "fantom",
+  "startBlock": 51510910,
+  "VaultFactoryAddress": "0xDE13061C612Bf66aE96F3C98d1fc6B44D0D9aa95",
+  "ControllerAddress": "0x9527B67040d312F80bCbB3F83b45a3B96c6a603C",
+  "RewardsFactoryAddress": "0xCFe81A717b496B87955C9e83f1d881c3Aa96eefD"
+}
