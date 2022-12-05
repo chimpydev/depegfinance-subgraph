@@ -1,0 +1,115 @@
+specVersion: 0.0.4
+description: Depeg Subgraph
+repository: https://github.com/Depeg-Protocol/GraphQL/DepegSubgraph
+schema:
+  file: ./schema.graphql
+dataSources:
+  - kind: ethereum/contract
+    name: VaultFactory
+    network: fantom
+    source:
+      abi: VaultFactory
+      address: "0xDE13061C612Bf66aE96F3C98d1fc6B44D0D9aa95"
+      startBlock: 51510910
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.6
+      language: wasm/assemblyscript
+      entities:
+        - Market
+        - Epoch
+        - Vault
+        - Token
+      abis:
+        - name: VaultFactory
+          file: ./abis/VaultFactory.json
+      eventHandlers:
+        - event: EpochCreated(indexed bytes32,indexed uint256,uint256,uint256,address,address,address,string,int256,uint256)
+          handler: handleEpochCreated
+        - event: MarketCreated(indexed uint256,address,address,address,string,int256)
+          handler: handleMarketCreated
+      file: ./src/mapping.ts
+  - kind: ethereum/contract
+    name: Controller
+    network: fantom
+    source:
+      abi: Controller
+      address: "0x9527B67040d312F80bCbB3F83b45a3B96c6a603C"
+      startBlock: 51510910
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.6
+      language: wasm/assemblyscript
+      entities:
+        - Epoch
+      abis:
+        - name: Controller
+          file: ./abis/Controller.json
+      eventHandlers:
+        - event: DepegInsurance(bytes32,(uint256,uint256,uint256,uint256),bool,uint256,uint256,int256)
+          handler: handleDepegInsurance
+      file: ./src/mapping.ts
+  - kind: ethereum/contract
+    name: RewardsFactory
+    network: fantom
+    source:
+      abi: RewardsFactory
+      address: "0xCFe81A717b496B87955C9e83f1d881c3Aa96eefD"
+      startBlock: 51510910
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.6
+      language: wasm/assemblyscript
+      entities:
+        - Farm
+        - Epoch
+      abis:
+        - name: RewardsFactory
+          file: ./abis/RewardsFactory.json
+      eventHandlers:
+        - event: CreatedStakingReward(indexed bytes32,indexed uint256,address,address)
+          handler: handleCreatedStakingReward
+      file: ./src/mapping.ts
+templates:
+  - kind: ethereum/contract
+    name: Vault
+    network: fantom
+    source:
+      abi: Vault
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.6
+      language: wasm/assemblyscript
+      file: ./src/vaults.ts
+      entities:
+        - Vault
+        - EpochVault
+        - Farm
+        - EpochIdMapping
+      abis:
+        - name: Vault
+          file: ./abis/Vault.json
+      eventHandlers:
+        - event: TransferSingle(indexed address,indexed address,indexed address,uint256,uint256)
+          handler: handleTransfer
+  - kind: ethereum/contract
+    name: StakingRewards
+    network: fantom
+    source:
+      abi: StakingRewards
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.6
+      language: wasm/assemblyscript
+      file: ./src/farm.ts
+      entities:
+        - Farm
+        - FarmPosition
+      abis:
+        - name: StakingRewards
+          file: ./abis/StakingRewards.json
+      eventHandlers:
+        - event: Staked(indexed address,uint256,uint256)
+          handler: handleFarmDeposit
+        - event: Withdrawn(indexed address,uint256,uint256)
+          handler: handleFarmWithdraw
