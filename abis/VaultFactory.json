@@ -4669,9 +4669,9 @@
                         "src": "7061:6:33",
                         "typeDescriptions": {
                           "typeIdentifier": "t_stringliteral_01857ee83c4e858b78c7404cf7866be5cfb4ce17b161ccdd55dfe4c210342c1a",
-                          "typeString": "literal_string \"hY2K\""
+                          "typeString": "literal_string \"hDEPEG\""
                         },
-                        "value": "hY2K"
+                        "value": "hDEPEG"
                       },
                       {
                         "id": 28925,
@@ -4734,7 +4734,7 @@
                         },
                         {
                           "typeIdentifier": "t_stringliteral_01857ee83c4e858b78c7404cf7866be5cfb4ce17b161ccdd55dfe4c210342c1a",
-                          "typeString": "literal_string \"hY2K\""
+                          "typeString": "literal_string \"hDEPEG\""
                         },
                         {
                           "typeIdentifier": "t_address",
@@ -4991,9 +4991,9 @@
                         "src": "7286:6:33",
                         "typeDescriptions": {
                           "typeIdentifier": "t_stringliteral_81ab9dd78cae40429bcf120b2f16a226eb5736337462bd5d3e49535fb4cc5dbe",
-                          "typeString": "literal_string \"rY2K\""
+                          "typeString": "literal_string \"rDEPEG\""
                         },
-                        "value": "rY2K"
+                        "value": "rDEPEG"
                       },
                       {
                         "id": 28947,
@@ -5056,7 +5056,7 @@
                         },
                         {
                           "typeIdentifier": "t_stringliteral_81ab9dd78cae40429bcf120b2f16a226eb5736337462bd5d3e49535fb4cc5dbe",
-                          "typeString": "literal_string \"rY2K\""
+                          "typeString": "literal_string \"rDEPEG\""
                         },
                         {
                           "typeIdentifier": "t_address",

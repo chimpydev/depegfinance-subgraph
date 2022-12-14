@@ -34,7 +34,7 @@ export function handleMarketCreated(event: MarketCreated): void {
 
   let hedgeVault = new Vault(params.hedge.toHexString()) as Vault;
   hedgeVault.address = params.hedge;
-  hedgeVault.name = params.name.toString() + "hY2K";
+  hedgeVault.name = params.name.toString() + "hDEPEG";
   hedgeVault.marketIndex = params.mIndex.toString();
   hedgeVault.tokenAdress = params.token;
   hedgeVault.marketName = params.name;
@@ -51,7 +51,7 @@ export function handleMarketCreated(event: MarketCreated): void {
 
   let riskVault = new Vault(params.risk.toHexString()) as Vault;
   riskVault.address = params.risk;
-  riskVault.name = params.name.toString() + "rY2K";
+  riskVault.name = params.name.toString() + "rDEPEG";
   riskVault.marketIndex = params.mIndex.toString();
   riskVault.tokenAdress = params.token;
   riskVault.marketName = params.name;
