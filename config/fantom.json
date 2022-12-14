@@ -1,7 +1,7 @@
 {
   "network": "fantom",
-  "startBlock": 51510910,
-  "VaultFactoryAddress": "0xDE13061C612Bf66aE96F3C98d1fc6B44D0D9aa95",
-  "ControllerAddress": "0x9527B67040d312F80bCbB3F83b45a3B96c6a603C",
-  "RewardsFactoryAddress": "0xCFe81A717b496B87955C9e83f1d881c3Aa96eefD"
+  "startBlock": 52335225,
+  "VaultFactoryAddress": "0x1C6E2D9568Fef8D878fBFa5Cdcffa63F067aF184",
+  "ControllerAddress": "0x3675c26E4A59F7f4284D6a16544A18d82475eeE0",
+  "RewardsFactoryAddress": "0xdE0DE523d9297e1F2f4Eb8487bF3186041F7a34f"
 }

@@ -9,8 +9,8 @@ dataSources:
     network: fantom
     source:
       abi: VaultFactory
-      address: "0xDE13061C612Bf66aE96F3C98d1fc6B44D0D9aa95"
-      startBlock: 51510910
+      address: "0x1C6E2D9568Fef8D878fBFa5Cdcffa63F067aF184"
+      startBlock: 52335225
     mapping:
       kind: ethereum/events
       apiVersion: 0.0.6
@@ -34,8 +34,8 @@ dataSources:
     network: fantom
     source:
       abi: Controller
-      address: "0x9527B67040d312F80bCbB3F83b45a3B96c6a603C"
-      startBlock: 51510910
+      address: "0x3675c26E4A59F7f4284D6a16544A18d82475eeE0"
+      startBlock: 52335225
     mapping:
       kind: ethereum/events
       apiVersion: 0.0.6
@@ -54,8 +54,8 @@ dataSources:
     network: fantom
     source:
       abi: RewardsFactory
-      address: "0xCFe81A717b496B87955C9e83f1d881c3Aa96eefD"
-      startBlock: 51510910
+      address: "0xdE0DE523d9297e1F2f4Eb8487bF3186041F7a34f"
+      startBlock: 52335225
     mapping:
       kind: ethereum/events
       apiVersion: 0.0.6
